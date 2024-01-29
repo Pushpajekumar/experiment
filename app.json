@@ -11,15 +11,25 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Allow Experiment to use Face ID."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
+      ],
+      "package": "com.pushpaje.experiment"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +41,12 @@
           "faceIDPermission": "Allow Experiment to use Face ID."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "77e419ed-1f33-49f2-8e4b-e148dfb75e76"
+      }
+    },
+    "owner": "pushpaje"
   }
 }
